@@ -13,7 +13,7 @@ struct ContentView: View {
             Image("randi")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100)
+                .frame(width: 80, height: 100)
                 .clipShape(Circle())
                 .shadow(radius: 10)
             
@@ -26,6 +26,7 @@ struct ContentView: View {
             } // fin vstack
             
         } // fin hstack
+        .padding(.leading,-60)
         
         
         
@@ -36,8 +37,9 @@ struct ContentView: View {
         VStack{
             ZStack{
                 Rectangle()
-                    .frame(width: 300, height: 200)
-                    .cornerRadius(20)
+                    .frame(width: 350, height: 200)
+                    .cornerRadius(30)
+
                 
                 Image(systemName: "wifi")
                     .rotationEffect(.degrees(-90))
@@ -77,6 +79,8 @@ struct ContentView: View {
                         .foregroundColor(.accentColor)
                         .frame(width: 150, height: 100)
                         .cornerRadius(20)
+                        .padding(.leading,10)
+
                     
                         Circle()
                         .stroke(Color.gray, lineWidth: 5) // Cercle extérieur
@@ -84,7 +88,7 @@ struct ContentView: View {
                         .padding(.leading,-150)
                     
                         Circle()
-                        .trim(from: 0.4, to: 1.0) // Définir la partie visible du cercle intérieur
+                        .trim(from: 0.0, to: 0.7) // Définir la partie visible du cercle intérieur
                         .stroke(Color.green, lineWidth: 5) // Cercle intérieur
                         .frame(width: 50, height: 50)
                         .padding(.leading,-158)
@@ -105,41 +109,47 @@ struct ContentView: View {
                         .padding(.leading,-110)
                 
                 
+                VStack {
+                    Rectangle()
+                        .foregroundColor(.color2)
+                        .frame(width: 150, height: 100)
+                        .cornerRadius(20)
+                } // fin vstack
+                .padding(.leading,-20)
                 
-                
-                Rectangle()
-                    .foregroundColor(.color2)
-                    .frame(width: 150, height: 100)
-                    .cornerRadius(20)
-                
+                VStack {
                     Circle()
-                    .stroke(Color.gray, lineWidth: 5) // Cercle extérieur
-                    .frame(width: 50, height: 50)
+                        .stroke(Color.gray, lineWidth: 5) // Cercle extérieur
+                        .frame(width: 50, height: 50)
                     .padding(.leading,-150)
+                } // fin vstack
                 
+                VStack {
                     Circle()
-                    .trim(from: 0.4, to: 1.0) // Définir la partie visible du cercle intérieur
-                    .stroke(Color.red, lineWidth: 5) // Cercle intérieur
-                    .frame(width: 50, height: 50)
+                        .trim(from: 0.0, to: 0.3) // Définir la partie visible du cercle intérieur
+                        .stroke(Color.red, lineWidth: 5) // Cercle intérieur
+                        .frame(width: 50, height: 50)
                     .padding(.leading,-158)
+                } // fin vstack
 
                 
-                Text("Income")
-                    .foregroundStyle(.gray)
-                    .bold()
-                    .padding(.top,-30)
-                    .padding(.leading,-100)
+                VStack {
+                    Text("Expenses")
+                        .foregroundStyle(.gray)
+                        .bold()
+                        .padding(.top,-30)
+                        .padding(.leading,-110)
+                } // fin vstack
 
                 
-                Text("$2,400")
-                    .foregroundStyle(.black)
-                    .font(.system(size: 20))
-                    .bold()
-                    .padding(.top,10)
+                VStack {
+                    Text("$1,400")
+                        .foregroundStyle(.black)
+                        .font(.system(size: 20))
+                        .bold()
+                        .padding(.top,10)
                     .padding(.leading,-110)
-                
-                
-
+                } // fin vstack
             }// Zstack
         } // hstack
             
@@ -147,6 +157,7 @@ struct ContentView: View {
         Text("Transactions")
             .bold()
             .font(.title)
+            .padding(.leading,-160)
         
         
             
@@ -154,7 +165,7 @@ struct ContentView: View {
         HStack{
             ZStack{
                 Rectangle()                     // 1 IEM DROPBOX
-                    .frame(width: 300, height: 70)
+                    .frame(width: 330, height: 70)
                     .foregroundColor(.color3)
                     .cornerRadius(20)
                 
@@ -196,7 +207,7 @@ struct ContentView: View {
         HStack{
             ZStack{
                 Rectangle()             // 2 IEM  UBER
-                    .frame(width: 300, height: 70)
+                    .frame(width: 330, height: 70)
                     .foregroundColor(.color3)
                     .cornerRadius(20)
                 
@@ -236,7 +247,7 @@ struct ContentView: View {
         HStack{
             ZStack{
                 Rectangle()             // 3 IEM  DROPBOXXXX
-                    .frame(width: 300, height: 70)
+                    .frame(width: 330, height: 70)
                     .foregroundColor(.color3)
                     .cornerRadius(20)
                 
@@ -271,17 +282,13 @@ struct ContentView: View {
                     .padding(.top,20)
                 
               } // fin vstack
-         }
-             
+         } // fin hstack
         
-        
-        
-        
-        
-        
-        
+         
         Spacer()
+        
     }// body
+    
             
 } // fin struct
 
